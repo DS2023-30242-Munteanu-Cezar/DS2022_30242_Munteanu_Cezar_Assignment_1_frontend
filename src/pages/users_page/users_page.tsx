@@ -35,7 +35,7 @@ const UsersPage = () =>{
             <Header isAdmin= {isAdmin()} isLogged = {true}></Header>
             <div className="users_body">
                 {users.map( (user, index) => {
-                    return <Card type="user" obj={{username: user.username, email: user.email, role: user.roleCode}} isAdmin={isAdmin()}></Card>
+                    return <Card type="user" pass={user.password} obj={{username: user.username, email: user.email, role: user.roleCode}} isAdmin={isAdmin()}></Card>
                 })}
             </div>
         </div>

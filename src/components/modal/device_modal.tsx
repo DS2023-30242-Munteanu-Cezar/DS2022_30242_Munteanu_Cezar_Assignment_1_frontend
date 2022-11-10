@@ -28,7 +28,7 @@ const DeviceModal = (props: DeviceModalComponent) =>{
         event.preventDefault();
 
         devices.map((device) => {
-            if(device.id.localeCompare(aux.id)){
+            if(device.id === aux.id){
                 
                
                 if(updateInfo.userUsername !== ""){
@@ -62,7 +62,9 @@ const DeviceModal = (props: DeviceModalComponent) =>{
                 }
             }
         })
+
         setDevices(devices);
+        // console.log(updateInfo);
 
         await getAxiosInstanceCustom().post("/devices/update", JSON.stringify({id: aux.id, userUsername:updateInfo.userUsername, energyConsumption: updateInfo.energyConsumption, adress: updateInfo.adress, description: updateInfo.description}));
         close();

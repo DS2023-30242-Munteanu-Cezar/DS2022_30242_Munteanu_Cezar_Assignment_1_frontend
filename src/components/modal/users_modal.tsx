@@ -9,6 +9,7 @@ import "./user_modal.scss";
 
 interface UserModalComponenet{
     obj: any;
+    pass?: string;
 }
 
 const UserModal = (props: UserModalComponenet) => {
@@ -34,7 +35,7 @@ const UserModal = (props: UserModalComponenet) => {
                         choose = 2;
                     }
                     if(updateInfo.email === "" && updateInfo.password !== ""){
-                        user.email = updateInfo.email;
+                        user.password = updateInfo.password;
                         choose = 3;
                     }
                 }
@@ -42,13 +43,18 @@ const UserModal = (props: UserModalComponenet) => {
             setUsers(users);
             
             if(choose === 1){
+                console.log({username: props.obj.username, password: updateInfo.password, email: updateInfo.email, roleCode: props.obj.role});
                 await getAxiosInstanceCustom().post("/users/update", JSON.stringify({username: props.obj.username, password: updateInfo.password, email: updateInfo.email, roleCode: props.obj.role}));
             }
             else{
                 if(choose === 2){
-                    await getAxiosInstanceCustom().post("/users/update", JSON.stringify({username: props.obj.username, password: props.obj.password, email: updateInfo.email, roleCode: props.obj.role}));
+                    console.log({username: props.obj.username, password: props.obj.password, email: updateInfo.email, roleCode: props.obj.role});
+                    
+                    await getAxiosInstanceCustom().post("/users/update", JSON.stringify({username: props.obj.username, password: props.pass, email: updateInfo.email, roleCode: props.obj.role}));
                 }
                 else{
+                    console.log({username: props.obj.username, password: updateInfo.password, email: props.obj.email, roleCode: props.obj.role});
+                    
                     await getAxiosInstanceCustom().post("/users/update", JSON.stringify({username: props.obj.username, password: updateInfo.password, email: props.obj.email, roleCode: props.obj.role}));
                 }
             }

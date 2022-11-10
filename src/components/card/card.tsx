@@ -15,6 +15,7 @@ interface CardComponent {
     obj: any;
     isAdmin?: boolean;
     type?: string;
+    pass?: string;
 };
 
 
@@ -75,7 +76,7 @@ const Card = (props: CardComponent): JSX.Element =>{
 
         </body>
         {openModal && props.type === "user"?
-            <UserModal obj={props.obj}/>
+            <UserModal obj={props.obj} pass={props.pass}/>
             :openModal && props.type === "device"?
             <DeviceModal obj={props.obj} type= "update"/>
             : openModal && props.type === "measurement"?
