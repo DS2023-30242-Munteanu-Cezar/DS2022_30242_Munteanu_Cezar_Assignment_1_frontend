@@ -1,0 +1,19 @@
+@import "../../assets/sass/variable.scss";
+
+.users_body{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1%;
+    padding: 1%;
+    background: $sd-hover2-color;
+}
+
+
+.user_main{
+    height: 100vh;
+    display: grid;
+    grid-auto-rows: 5% 95%;
+    background: $sd-hover2-color;
+}

@@ -1,0 +1,17 @@
+@import "../../assets/sass/variable.scss";
+
+.button_main{
+    height: 100%;
+    width: 100%;
+
+    background: $sd-main-color;
+    color: $sd-second-color;
+    border: 1px solid $sd-second-color;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button_main:hover{
+    background: $sd-hover-color;
+    color: $sd-hover2-color;
+    border: $sd-hover2-color;
+}

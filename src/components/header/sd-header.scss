@@ -1,0 +1,43 @@
+@import "../../assets/sass/variable.scss";
+
+.header_main{
+    display: grid;
+    grid-template-columns: 90% 10%;
+    font-family: $sd-second-font;
+    background: $sd-second-color;
+    color: $sd-main-color;
+
+    .header_options{
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+
+        .header_admin{
+            margin-top: 10%;
+            cursor: pointer;
+            margin-left: 10%;
+        }
+
+        :hover{
+            color: $sd-hover-color;
+        }
+    }
+
+    .header_logut{
+        :hover{
+            color: $sd-hover-color;
+        }
+    }
+    
+    .header_user{
+        margin-top: 10%;
+        cursor: pointer;
+        margin-left: 10%;
+    }
+
+    .utcn-logo{
+        margin-top: 5%;
+        height: 60%;
+        width: 30%;
+        margin-left: 35%;
+    }
+}

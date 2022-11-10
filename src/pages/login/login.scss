@@ -1,0 +1,93 @@
+@import "../../assets/sass/variable.scss";
+
+.login_body{
+    height: 100vh;
+    display:grid;
+    grid-template-rows: 5% 95%;
+    background: $sd-main-color;
+
+
+    .login_form{
+        height: 50%;
+        width: 30%;
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        justify-content: space-evenly;
+        margin-top: 10%;
+        border: 1px solid $sd-second-color;
+        margin-left: 35%;
+        color: $sd-second-color;
+        border-radius: 5px;
+
+        .login_header{
+            color: $sd-second-color;
+            
+        }
+
+        .username_label{
+            display: grid;
+            grid-template-rows: 50% 50%;
+            height: 70%;
+        }
+
+        .password_label{
+            height: 70%;
+            display: grid;
+            grid-template-rows: 50% 50%;
+
+            .eye_div{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            .eye{
+
+                position: absolute;
+                margin-top: 8px;
+                height: 2%;
+                width: 1%;
+                cursor: pointer;
+            }
+            .eye_slash{
+
+                position: absolute;
+                margin-top: 8px;
+                height: 2%;
+                width: 1%;
+                cursor: pointer;
+            }
+
+        }
+
+        .button_main{
+            height: 40%;
+        }
+    }
+}
+
+
+
+.username_input{
+    border: none;
+    background: $sd-main-color;
+    border-bottom: 1px solid $sd-second-color;   
+    color: $sd-second-color;
+}
+
+.username_input:focus{
+    outline: none;
+    border-bottom: 1px solid $sd-hover-color;
+}
+
+.password_input{
+    border: none;
+    background: $sd-main-color;
+    border-bottom: 1px solid $sd-second-color;   
+    color: $sd-second-color;
+}
+
+.password_input:focus{
+    outline: none;
+    border-bottom: 1px solid $sd-hover-color;
+}

@@ -1,0 +1,48 @@
+@import "../../assets/sass/variable.scss";
+
+.register_body{
+    height: 100vh;
+    display:grid;
+    grid-template-rows: 5% 95%;
+    background: $sd-main-color;
+
+    .register_form{
+        height: 50%;
+        width: 30%;
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        justify-content: space-evenly;
+        margin-top: 10%;
+        border: 1px solid $sd-second-color;
+        margin-left: 35%;
+        color: $sd-second-color;
+        border-radius: 5px;
+
+        .button_main{
+            height: 40%;
+        }
+
+        .email_label{
+            display: grid;
+            grid-template-rows: 50% 50%;
+            height: 70%;
+        }
+
+        .username_label{
+            display: grid;
+            grid-template-rows: 50% 50%;
+            height: 70%;
+        }
+
+        .pasword_ label{
+            display: grid;
+            grid-template-rows: 50% 50%;
+            height: 70%;
+        }
+        .register_text{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import "../../assets/sass/variable.scss";
+
+
+.card_body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: $sd-main-color;
+    border: 2px solid $sd-second-color;
+    border-radius: 10px;
+    color: $sd-second-color;
+    font-size: large;
+    font-family: $sd-font;
+
+    :hover{
+        background: $sd-hover2-color;
+    }
+}
+
+.card_line{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1%;
+}
+
+.update{
+    height: 100%;
+    width: 5%;
+    cursor: pointer;
+}
+.trash{
+    height: 100%;
+    width: 5%;
+    cursor: pointer;
+}
+
+.options{
+    display: flex;
+    justify-content: space-around;
+    margin: 2%
+}
+

@@ -1,0 +1,44 @@
+@import "../../assets/sass/variable.scss";
+
+.device_modal{
+    position: absolute;
+    height: 100%;
+    width: 99%;
+    background: white;
+    opacity: 0.8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .device_modal_body{
+        background: $sd-main-color;
+        height: 30%;
+        width: 30%;
+        padding: 2%;
+        border: 1px solid $sd-second-color;
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+
+        .device_modal_form{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .device_modal_label{
+                margin: 2%;
+                display: flex;
+                justify-content: space-between;
+
+                .device_modal_input{
+                    border: none;
+                    border-bottom: 1px solid $sd-second-color;
+                    background-color: $sd-main-color;
+                }
+            }
+        }
+    }
+}
