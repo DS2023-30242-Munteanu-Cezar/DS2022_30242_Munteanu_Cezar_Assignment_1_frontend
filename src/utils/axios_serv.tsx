@@ -7,8 +7,6 @@ const defaultHeaders: { [key: string]: string } = {
     "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
 };
 
-require('dotenv').config();
-
 const defaultConfig: { baseURL: string; headers: { [key: string]: string } } = {
   baseURL: "http://" + window.location.origin +":8080",
   headers: defaultHeaders,
