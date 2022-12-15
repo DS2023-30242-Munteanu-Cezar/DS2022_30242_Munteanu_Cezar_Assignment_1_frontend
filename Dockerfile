@@ -1,10 +1,15 @@
-FROM nginx
+FROM node:12-alpine
 
-# Copy the build folder from the React application to the nginx public folder
-COPY build /usr/share/nginx/html
+WORKDIR /app
 
-# Expose the default nginx port
-EXPOSE 80
+COPY package.json package-lock.json ./
 
-# Set the default command to start the nginx server
-CMD ["nginx", "-g", "daemon off;"]
+RUN npm install
+
+COPY . ./
+
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
