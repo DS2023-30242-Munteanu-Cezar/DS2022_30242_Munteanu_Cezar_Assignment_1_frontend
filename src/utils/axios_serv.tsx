@@ -6,8 +6,11 @@ const defaultHeaders: { [key: string]: string } = {
   "Access-Control-Allow-Headers":
     "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
 };
+
+require('dotenv').config();
+
 const defaultConfig: { baseURL: string; headers: { [key: string]: string } } = {
-  baseURL: "http://localhost:8080",
+  baseURL: "http://" + process.env.API_URL +":8080",
   headers: defaultHeaders,
 };
 
