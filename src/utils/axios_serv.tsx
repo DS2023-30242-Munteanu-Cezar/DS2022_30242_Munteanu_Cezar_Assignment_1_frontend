@@ -10,7 +10,7 @@ const defaultHeaders: { [key: string]: string } = {
 require('dotenv').config();
 
 const defaultConfig: { baseURL: string; headers: { [key: string]: string } } = {
-  baseURL: "http://" + process.env.API_URL +":8080",
+  baseURL: "http://" + window.location.origin +":8080",
   headers: defaultHeaders,
 };
 
