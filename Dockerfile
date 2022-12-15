@@ -1,7 +1,10 @@
-FROM node:latest as builder
-COPY . /app
-WORKDIR /app
-ENV PATH="./node_modules/.bin:$PATH"
-COPY . .
-RUN npm run build 
-CMD ["npm", "start"]
+FROM nginx
+
+# Copy the build folder from the React application to the nginx public folder
+COPY build /usr/share/nginx/html
+
+# Expose the default nginx port
+EXPOSE 80
+
+# Set the default command to start the nginx server
+CMD ["nginx", "-g", "daemon off;"]
