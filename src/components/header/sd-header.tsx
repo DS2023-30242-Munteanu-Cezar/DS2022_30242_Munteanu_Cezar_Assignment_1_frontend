@@ -19,7 +19,7 @@ const Header: React.FC<HeaderComponent> = (props: HeaderComponent):JSX.Element =
         event.preventDefault();
         const nonUser: LoginType = {username: "", role: ""};
         setLoginData(nonUser);
-        localStorage.clear();
+        sessionStorage.clear();
         navigate("/");
     }
     

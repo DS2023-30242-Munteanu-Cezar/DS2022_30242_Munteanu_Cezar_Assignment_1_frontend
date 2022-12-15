@@ -8,6 +8,7 @@ import Card from "../../components/card/card";
 import "./device_page.scss";
 import Icon from "../../components/icon/icon";
 import DeviceModal from "../../components/modal/device_modal";
+import SocketMessage from "../../components/socket/socketMsg";
 
 
 const DevicesPage = () =>{
@@ -19,7 +20,7 @@ const DevicesPage = () =>{
 
     useEffect(function verifyFetch(){
         setLoginData(getLogin);
-        if(!localStorage.getItem("accesToken")){
+        if(!sessionStorage.getItem("accesToken")){
             navigate("/");
         }
     },[]);
@@ -61,6 +62,7 @@ const DevicesPage = () =>{
                 <Icon type="plus" onClick={open}></Icon>
                 : <></>}
             </div>
+            <div><SocketMessage username={loginData.username}></SocketMessage></div>
         </div>
 
     </>;

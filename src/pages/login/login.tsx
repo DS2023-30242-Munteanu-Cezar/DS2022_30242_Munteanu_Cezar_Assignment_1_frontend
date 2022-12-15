@@ -33,7 +33,8 @@ const Login = (): JSX.Element =>{
             loginData.role = a[1];
             loginData.username = a[0];
             setLoginData(loginData);
-            localStorage.setItem("accesToken", aux.data.accesToken);
+            sessionStorage.setItem("accesToken", aux.data.accesToken);
+            // localStorage.setItem("accesToken", aux.data.accesToken);
             navigate("/users");
         }
         

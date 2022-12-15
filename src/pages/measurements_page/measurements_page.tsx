@@ -17,7 +17,7 @@ const MeasurementsPage = () =>{
     
     useEffect(function verifyFetch(){
         setLoginData(getLogin);
-        if(!localStorage.getItem("accesToken")){
+        if(!sessionStorage.getItem("accesToken")){
 
             navigate("/");
         }

@@ -15,7 +15,7 @@ const LoginProvider: FC<{children: React.ReactNode}> = ({ children }) => {
     });
 
     const getLogin = () =>{
-        const accesToken: any = localStorage.getItem("accesToken");
+        const accesToken: any = sessionStorage.getItem("accesToken");
         const myLoginData: any = {username: "", role: ""};
 
         if(accesToken){

@@ -15,7 +15,7 @@ const UsersPage = () =>{
 
     useEffect(function verifyFetch(){
         setLoginData(getLogin);
-        if(!localStorage.getItem("accesToken")){
+        if(!sessionStorage.getItem("accesToken")){
             navigate("/");
         }
         if(loginData.role !== "ADMIN"){
