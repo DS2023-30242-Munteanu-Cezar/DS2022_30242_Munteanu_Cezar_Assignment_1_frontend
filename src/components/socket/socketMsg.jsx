@@ -1,5 +1,6 @@
 // import SockJsClient from 'react-stomp';
 import SockJsClient from 'react-stomp';
+import React from 'react';
 
 
 const url = "http://localhost:8080/ws-message";
