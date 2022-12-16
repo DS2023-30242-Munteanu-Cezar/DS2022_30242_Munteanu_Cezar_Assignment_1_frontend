@@ -1,19 +1,10 @@
-FROM node:latest as builder
+FROM nginx
 
-WORKDIR /app
+# Copy the build folder from the React application to the nginx public folder
+COPY build /usr/share/nginx/html
 
-COPY . /app/ 
-RUN npm install 
-RUN npm install react-scripts@3.0.1 -g
-
-COPY ./ /app/
-RUN npm run build
-
-FROM nginx:1.21.0-alpine as production
-COPY --from=builder /app/build /usr/share/nginx/html
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d
-
-# Start nginx
+# Expose the default nginx port
 EXPOSE 80
+
+# Set the default command to start the nginx server
 CMD ["nginx", "-g", "daemon off;"]
