@@ -1,17 +1,7 @@
-FROM node:12-alpine
+FROM nginx
 
-WORKDIR /app
+COPY build /usr/share/nginx/html
 
-COPY package.json package-lock.json ./
+EXPOSE 80
 
-RUN npm install
-
-COPY . ./
-
-ENV API_URL http://api.example.com
-
-RUN npm run build
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]

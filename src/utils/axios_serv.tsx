@@ -8,7 +8,7 @@ const defaultHeaders: { [key: string]: string } = {
 };
 
 const defaultConfig: { baseURL: string; headers: { [key: string]: string } } = {
-  baseURL: "http://" + window.location.origin +":8080",
+  baseURL: "http://" + window.location.hostname +":8080",
   headers: defaultHeaders,
 };
 
