@@ -4,10 +4,12 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-RUN npm install
+RUN npm cache clean --force
+RUN npm install --save-dev
 
 COPY . ./
 
+RUN npm rebuild node-sass --force
 RUN npm run build
 
 EXPOSE 3000
