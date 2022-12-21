@@ -1,17 +1,19 @@
-FROM node:12-alpine
+FROM node:latest as builder
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY . /app/ 
+RUN npm install 
+RUN npm install react-scripts@3.0.1 -g
 
-RUN npm cache clean --force
-RUN npm install --save-dev
-
-COPY . ./
-
-RUN npm rebuild node-sass --force
+COPY ./ /app/
 RUN npm run build
 
-EXPOSE 3000
+FROM nginx:1.21.0-alpine as production
+COPY --from=builder /app/build /usr/share/nginx/html
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d
 
-CMD ["npm", "start"]
+# Start nginx
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
