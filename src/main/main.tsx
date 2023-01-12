@@ -9,6 +9,7 @@ import { DeviceContext } from "../contexts/device_context";
 import DevicesPage from "../pages/devices_page/devices_page";
 import { MeasurementsContext } from "../contexts/measurement_context";
 import MeasurementsPage from "../pages/measurements_page/measurements_page";
+import ChatRoom from "../components/socket/ChatRoom";
 
 const Main = () : JSX.Element =>{
     const {setUsers, getUsers} = useContext<UsersContextType>(UsersContext);
@@ -38,6 +39,7 @@ const Main = () : JSX.Element =>{
             <Route path="/register" element={<Register/>}></Route>
             <Route path="/devices" element={<DevicesPage/>}></Route>
             <Route path="/measurements" element= {<MeasurementsPage/>}></Route>
+            <Route path="/chat" element= {<ChatRoom/>}></Route>
         </Routes>
     </div>;
 }

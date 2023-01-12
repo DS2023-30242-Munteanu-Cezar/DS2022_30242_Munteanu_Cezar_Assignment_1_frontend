@@ -9,6 +9,7 @@ import "./device_page.scss";
 import Icon from "../../components/icon/icon";
 import DeviceModal from "../../components/modal/device_modal";
 import SocketMessage from "../../components/socket/socketMsg";
+import ChatRoom from "../../components/socket/ChatRoom";
 
 
 const DevicesPage = () =>{

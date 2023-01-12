@@ -32,6 +32,7 @@ const Header: React.FC<HeaderComponent> = (props: HeaderComponent):JSX.Element =
                     <>
                         <p className="header_user" onClick={() => navigate("/devices")}>DEVICES</p>
                         <p className="header_user" onClick={() => navigate("/measurements")}>MEASUREMENTS</p>
+                        <p className="header_user" onClick={() => navigate("/chat")}>CHAT</p>
                     </>
                     : <>
                     <p className="header_user" onClick={() => navigate("/")}>LOG IN</p>
